@@ -14,7 +14,7 @@ public class PlayerPaddleController : PaddleController
     {
         if (_direction.sqrMagnitude != 0)
         {
-            _rigidbody.AddForce(_direction * _speed);
+            _paddleRigidbody.AddForce(_direction * _speed);
         }
     }
 

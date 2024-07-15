@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BouncySurface : MonoBehaviour
 {
-    [SerializeField] private float _bounceStrentgh;
+    [SerializeField] private float _bounceStrength;
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -13,7 +13,7 @@ public class BouncySurface : MonoBehaviour
         if (ballController != null)
         {
             Vector2 normal = collision.GetContact(0).normal;
-            ballController.AddForce(-normal * this._bounceStrentgh);
+            ballController.AddForce(-normal * this._bounceStrength);
         }
     }
 }

@@ -6,10 +6,10 @@ public class BallController : MonoBehaviour
 {
     [SerializeField] private float _speed = 200f;
 
-    private Rigidbody2D _rigidbody;
+    private Rigidbody2D _ballRigidbody;
     private void Awake()
     {
-        _rigidbody = GetComponent<Rigidbody2D>();
+        _ballRigidbody = GetComponent<Rigidbody2D>();
     }
     private void Start()
     {
@@ -18,8 +18,8 @@ public class BallController : MonoBehaviour
     }
     public void ResetPosition()
     {
-        _rigidbody.position = Vector3.zero;
-        _rigidbody.velocity = Vector3.zero;
+        _ballRigidbody.position = Vector3.zero;
+        _ballRigidbody.velocity = Vector3.zero;
 
       
     }
@@ -29,13 +29,13 @@ public class BallController : MonoBehaviour
         float x = Random.value < 0.5f ? -1.0f : 1.0f;
         float y = Random.value < 0.5f ? Random.Range(-1f, -0.5f) : Random.Range(0.5f,1.0f);
         Vector2 direction = new Vector2(x, y);
-        _rigidbody.AddForce(direction * this._speed);
+        _ballRigidbody.AddForce(direction * this._speed);
 
     }
 
     public void AddForce(Vector2 force) 
     {
-        _rigidbody.AddForce(force);
+        _ballRigidbody.AddForce(force);
     }
 
    

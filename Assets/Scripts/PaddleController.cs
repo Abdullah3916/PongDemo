@@ -6,16 +6,16 @@ public class PaddleController : MonoBehaviour
 {
     [SerializeField] protected float _speed = 10f;
 
-    protected Rigidbody2D _rigidbody;
+    protected Rigidbody2D _paddleRigidbody;
 
     private void Awake()
     {
-        _rigidbody = GetComponent<Rigidbody2D>();
+        _paddleRigidbody = GetComponent<Rigidbody2D>();
     }
 
     public void PaddleResetPosition()
     {
-        _rigidbody.position = new Vector2(_rigidbody.position.x , 0f);
-        _rigidbody.velocity = Vector2.zero;
+        _paddleRigidbody.position = new Vector2(_paddleRigidbody.position.x , 0f);
+        _paddleRigidbody.velocity = Vector2.zero;
     }
 }
