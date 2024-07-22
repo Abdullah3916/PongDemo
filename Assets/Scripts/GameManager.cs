@@ -13,7 +13,23 @@ public class GameManager : MonoBehaviour
     [SerializeField] private TMP_Text _computerScoreText;
     private int _playerScore;
     private int _computerScore;
+    private static GameManager _instance;
 
+    private void Awake()
+    {
+        if (_instance == null && _instance == this)
+        {
+            Destroy(this.gameObject);
+        }
+        else
+        {
+            _instance = this;
+        }
+    }
+    public static GameManager Instance
+    {
+        get{ { return _instance; } }
+    }
     public void PlayerScores() 
     {
         _playerScore++;

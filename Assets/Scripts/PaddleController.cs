@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PaddleController : MonoBehaviour
 {
-    [SerializeField] protected float _speed = 10f;
+    [SerializeField] protected float _paddleSpeed = 10f;
 
     protected Rigidbody2D _paddleRigidbody;
 
